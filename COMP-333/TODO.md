@@ -1,7 +1,6 @@
 # COMP-333 SCHEDULE
 
-- [ ] 1. _**Mon 8/25 – Sun 8/27**_: Introduction, motivation; OOP introduction with Java, using
-inheritance to avoid code duplication;
+- [X] 1. _**Mon 8/25 – Sun 8/27**_: ~~Introduction, motivation; OOP introduction with Java, using inheritance to avoid code duplication~~;
 
 - [ ] 2. _**Mon 9/1 – Sun 9/3**_: Class-based inheritance,
 subtyping, virtual dispatch; Functional/immutable lists:

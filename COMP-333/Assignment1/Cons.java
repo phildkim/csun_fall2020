@@ -1,40 +1,52 @@
+/*
+ * length: returns the length of a list.
+ * 
+ * sum: returns the sum of all the elements of the list.
+ * 
+ * append: appends two lists together, returning a new list. 
+ * 
+ * contains: returns true if the given list contains the given element, else false.
+ */
 public class Cons implements ImmutableList {
+  // ---BEGIN INSTANCE VARIABLES---
   public final int head;
   public final ImmutableList tail;
+  // ---END INSTANCE VARIABLES---
+
   public Cons(final int head, final ImmutableList tail) {
     this.head = head;
     this.tail = tail;
-  } // Cons
-  @Override
-  public int sum() {
-    return this.head + this.tail.sum();
-  } // sum
-  @Override
-  public int length() {
-    return 1 + tail.length();
-  } // length
-  @Override
-  public int hashCode() {
-    return sum();
-  } // hashCode
-  @Override
-  public String toString() {
-    return "Cons(" + this.head + ", " + this.tail.toString() + ")";
-  } // toString
-  @Override
-  public boolean contains(final int value) {
-    return this.tail.contains(value) || this.tail.hashCode() == value || this.head == value;
-  } // contains
-  @Override
+  } // Non-Empty List (Head)
+
   public boolean equals(final Object other) {
     if (other instanceof Cons) {
       final Cons otherCons = (Cons) other;
-      return this.head == otherCons.head && this.tail.equals(otherCons.tail);
+      return head == otherCons.head && tail.equals(otherCons.tail);
     } else {
       return false;
     }
   } // equals
-  @Override
+
+  public String toString() {
+    return "Cons(" + head + ", " + tail.toString() + ")";
+  } // toString
+
+  public int hashCode() {
+    return sum();
+  } // hashCode
+
+  public int sum() {
+    return this.head + this.tail.sum();
+  } // sum
+
+  public int length() {
+    return 1 + this.tail.length();
+  } // length
+
+  public boolean contains(final int value) {
+    return this.tail.contains(value) || this.tail.hashCode() == value || this.head == value;
+  } // contains
+
   public ImmutableList append(final ImmutableList other) {
     return new Cons(this.head, this.tail.append(other));
   } // append
