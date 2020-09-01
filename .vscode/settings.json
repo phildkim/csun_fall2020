@@ -9,5 +9,37 @@
     "COMP-333/Assignment1/hamcrest-2.2.jar",
     "COMP-333/Assignment1/junit-4.13.jar",
     "COMP-333/Assignment1/ImmutableListTest.jar"
-  ]
+  ],
+  "java.dependency.packagePresentation": "hierarchical",
+  "java.dependency.showMembers": true,
+  "latex-workshop.intellisense.unimathsymbols.enabled": true,
+  "latex-workshop.latex.clean.subfolder.enabled": true,
+  "latex-workshop.message.information.show": true,
+  "latex-workshop.showContextMenu": true,
+  "typescript.tsserver.trace": "messages",
+  "html.trace.server": "messages",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.errors.incompleteClasspath.severity": "error",
+  "json.trace.server": "messages",
+  "cSpell.language": "en,en-US",
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.view.pdf.hand": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "cSpell.ignoreWords": [
+    "fontname",
+    "iftex",
+    "ifvtex",
+    "keyval",
+    "pdflatex",
+    "pdfmode",
+    "pdftex",
+    "philipkim",
+    "texfonts",
+    "texlive",
+    "texmf",
+    "updmap"
+  ],
+  "latex-workshop.intellisense.file.base": "both",
+  "latex-workshop.latex.rootFile.doNotPrompt": true,
+  "latex-utilities.zotero.citeMethod": "vscode"
 }
