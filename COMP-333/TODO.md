@@ -2,9 +2,9 @@
 
 - [X] 1. _**Mon 8/25 – Sun 8/27**_: ~~Introduction, motivation; OOP introduction with Java, using inheritance to avoid code duplication~~;
 
-- [ ] 2. _**Mon 9/1 – Sun 9/3**_: Class-based inheritance,
-subtyping, virtual dispatch; Functional/immutable lists:
-representation and operations;
+- [X] 2. _**Mon 9/1 – Sun 9/3**_: ~~Class-based inheritance,
+sub-typing, virtual dispatch; Functional/immutable lists:
+representation and operations~~;
 
 - [ ] 3. _**Mon 9/8 – Sun 9/10**_: Class-based OOP spillover; JavaScript introduction, types introduction (static vs dynamic, strong vs. weak, untyped);
 

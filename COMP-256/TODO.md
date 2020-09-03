@@ -1,8 +1,8 @@
 # COMP-256 SCHEDULE
 
-- [ ] **_August 24, 26_**: Section 1.1 - 1.13, Logic
+- [X] **_August 24, 26_**: Section 1.1 - 1.13, ~~Logic~~
 
-- [ ] **_August 31, September 2_**: Section 2.1 - 2.7, Proofs
+- [X] **_August 31, September 2_**: Section 2.1 - 2.7, ~~Proofs~~
 
 - [ ] **_September 9_**: Section 3.1 - 3.7, Sets
 
