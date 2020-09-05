@@ -1,0 +1,19 @@
+\documentclass[12pt,legalpaper]{article}
+\usepackage[top=1.0in,left=1.0in,bottom=1.0in,right=1.0in]{geometry}
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{dirtytalk,csquotes}
+\usepackage{graphicx,import}
+\usepackage{hyperref}
+\addbibresource{reference.bib}
+\renewcommand{\baselinestretch}{1.6}
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\begin{document}
+  \import{./}{titlepage.tex}
+  \import{./}{introduction.tex}
+  \import{./}{viewpoint.tex}
+  \import{./}{conclusion.tex}
+  \printbibliography\
+\end{document}
