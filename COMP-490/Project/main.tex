@@ -1,0 +1,36 @@
+\documentclass[12pt,legalpaper]{article}
+\usepackage[top=1.0in,left=1.0in,bottom=1.0in,right=1.0in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,amsthm,latexsym}
+\usepackage{graphicx,import,xcolor}
+\usepackage{tikz,tikz-uml}
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{blue},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+\lstset{style=mystyle}
+\begin{document}
+  \import{./}{titlepage.tex}
+  \import{./}{proposal.tex}
+  \import{./}{architecture.tex}
+  \import{./}{implementation.tex}
+\end{document}
