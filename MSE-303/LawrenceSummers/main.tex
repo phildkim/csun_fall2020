@@ -1,19 +1,28 @@
-\documentclass[12pt,legalpaper]{article}
+\documentclass{article}
 \usepackage[top=1.0in,left=1.0in,bottom=1.0in,right=1.0in]{geometry}
 \usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{dirtytalk,csquotes}
 \usepackage{graphicx,import}
+\usepackage{fancyhdr}
 \usepackage{hyperref}
 \addbibresource{reference.bib}
 \renewcommand{\baselinestretch}{1.6}
 \setlength{\parindent}{4em}
 \setlength{\parskip}{1em}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
 \begin{document}
   \import{./}{titlepage.tex}
   \import{./}{introduction.tex}
   \import{./}{viewpoint.tex}
   \import{./}{conclusion.tex}
-  \printbibliography\
+  \begin{minipage}{5.5in}
+    \fancyhead[R]{\textsc{Bibliography}}
+    \rfoot{\textsc{Page \thepage}}
+    \printbibliography\
+  \end{minipage}
 \end{document}
