@@ -1,12 +1,13 @@
 \documentclass{article}
 \usepackage[top=1.0in,left=1.0in,bottom=1.0in,right=1.0in]{geometry}
-\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\usepackage[backend=biber,style=alphabetic]{biblatex}
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{dirtytalk,csquotes}
 \usepackage{graphicx,import}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
+\usepackage{tikz}
 \addbibresource{reference.bib}
 \renewcommand{\baselinestretch}{1.6}
 \setlength{\parindent}{4em}
@@ -21,8 +22,7 @@
   \import{./}{viewpoint.tex}
   \import{./}{conclusion.tex}
   \begin{minipage}{5.5in}
-    \fancyhead[R]{\textsc{Bibliography}}
-    \rfoot{\textsc{Page \thepage}}
+    \fancyhead[R]{\textsc{Bibliography}} 
     \printbibliography\
   \end{minipage}
 \end{document}
