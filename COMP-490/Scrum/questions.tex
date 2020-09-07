@@ -1,44 +1,109 @@
-\begin{center}
-  \Huge\textbf{WEEKLY UPDATE QUESTIONS}\\
-  \large\textbf{August 31 -\ September 4, 2020}
-\end{center}
-\renewcommand{\labelenumii}{\Roman{enumii}.~}
-\begin{enumerate}
-  \item[\textbf{Lesson 1}] -\ \textbf{August 26, 2020}
+\centerline{\LARGE\textsc{Weekly Questions}}
+\centerline{August 31 -\ September 4, 2020}
+\textbf{}
+\begin{itemize}
+  \item[] \textbf{\large Lesson 1:}
   \begin{enumerate}
-    \item \textsl{Area this addresses (i.e a ``need'' or something ``missing'')}
-    \begin{enumerate}
-      \item[-] \textbf{Realized I would need something to automate my class schedule.}
-    \end{enumerate}
+    \item \textsl{Area this addresses}
+    \begin{itemize}
+      \item Automated class schedule for CSUN students
+    \end{itemize}
     \item \textsl{Market Analysis of topic}
-    \begin{enumerate}
-      \item[-] \textbf{Educational purpose and I couldn't find one. If approved I'll search more.}
-    \end{enumerate}
+    \begin{itemize}
+      \item Automated class schedule in app stores not found
+    \end{itemize}
     \item \textsl{Market Research of topic}
-    \begin{enumerate}
-      \item[-] \textbf{Research by taking survey on who would use this application. Also, check Android/IOS store if it exists.}
-    \end{enumerate}
+    \begin{itemize}
+      \item Automated class schedule application not found, but other
+      third party software tools are available; such as, selenium,
+      robotic process automation, and canvas.
+    \end{itemize}
   \end{enumerate} 
-  \item[\textbf{Lesson 2}] -\ \textbf{August 30, 2020}
+\end{itemize}
+\textbf{}
+\begin{itemize}
+  \item[] \textbf{\large Lesson 2:}
   \begin{enumerate}
     \item \textsl{Name the possible patents, licensing, open source status}
-    \begin{enumerate}
-      \item[-] \textbf{Not sure how using third parties affect licensing, but I would imagine there isn't much source out there.}
-    \end{enumerate}
-    \item \textsl{Will you possibly use some of their code for your solution to make something new/better? Why? Are you able to legally use it beyond research (i.e open source, commercial license?)}
-    \begin{enumerate}
-      \item[-] \textbf{I can't find any application that is similar, so the solution would be all of Awesome Company Inc.}
-    \end{enumerate}
+    \begin{itemize}
+      \item Canvas is a modern, open-source LMS developed and maintained by 
+      \href{https://www.instructure.com/canvas/?newhome=canvas}{Instructure Inc.} 
+      It is released under the \href{http://www.gnu.org/licenses/agpl-3.0.html}{AGPLv3} 
+      license for use by anyone interested in learning more about or using learning 
+      management systems.
+      \item Cross-platform, Open-Source Robotic Process Automation (RPA)
+      \item Selenium project is licensed under the Apache 2.0 license (Copyright)
+    \end{itemize}
+    \item \textsl{Use some of their code for your solution to make something new/better? Why?}
+    \begin{itemize}
+      \item Yes, it will save time and money to use third party webtools.
+    \end{itemize}
+    \item \textsl{Are you able to legally use it beyond research?}
+    \begin{itemize}
+      \item Yes, but in order to dual-license Canvas product, sign a contributor 
+      license agreement (CLA) before accepting a pull request. After submitting 
+      a pull request, a status check that indicates if a signature is required 
+      or not.
+    \end{itemize}
   \end{enumerate} 
-  \item[\textbf{Lesson 3}] -\ \textbf{September 3, 2020}
+\end{itemize}
+\textbf{}
+\begin{itemize}
+  \item[] \textbf{\large Lesson 3:}
   \begin{enumerate}
-    \item \textsl{User Design Workflow (i.e What the user will experience from start to finish of POC)}
-    \begin{enumerate}
-      \item[-] \textbf{If done correctly, all user needs to do is add DPR and desire major. Then recieve notification once it is complete.}
-    \end{enumerate}
-    \item \textsl{Describe your key mechanic in the Code Design Workflow (i.e 3rd party tools? How would they interact? Function? What makes it special)}
-    \begin{enumerate}
-      \item[-] \textbf{Selenium would go through each element and input required data by the CSUN student. It's special because it makes life easy and also helps students graduate on time, in return better economy.}
-    \end{enumerate}
-  \end{enumerate}
-\end{enumerate}
+    \item[1.] \fcolorbox{red}{pink}{\textsl{User Design Workflow}}
+  \end{enumerate}   
+\end{itemize}
+\begin{tikzpicture}
+  \begin{umlseqdiag} 
+    \umlactor[class=user]{student} 
+    % \umlcreatecall[class=B, draw obj=green!70!black, fill obj=green!20, draw=blue!70]{student}{b}
+    \umlobject[class=canvas]{login} 
+    \umlobject[class=data]{input} 
+    \umlobject[class=data]{output} 
+    \begin{umlcall}{student}{login}
+    \begin{umlcall}{login}{input} 
+    \begin{umlcall}{input}{output}
+    \begin{umlcall}{output}{student}
+    \end{umlcall} 
+    \end{umlcall} 
+    \end{umlcall} 
+    \end{umlcall}
+    \umlnote[x=2, y=-5]{input}{user provides data to be automated}
+    \umlnote[x=7, y=-5]{output}{notify user upon completion}
+  \end{umlseqdiag}
+\end{tikzpicture}
+\clearpage
+\begin{itemize}
+  \item[] \textbf{}
+  \begin{enumerate}
+    \item[2.] \fcolorbox{red}{pink}{\textsl{Describe key mechanic in the Code Design Workflow}} 
+    \begin{itemize}
+      \item[\$~curl] \texttt{`\url{https://<canvas>/api/v1/accounts/:account_id/logins/:login_id}'}
+      \item[\$~curl] \texttt{`\url{https://<canvas>/api/v1/courses/:course_id/enrollments}'}
+    \end{itemize}  
+  \end{enumerate}  
+\end{itemize}
+\begin{tikzpicture}[level 1/.style={sibling distance=40mm},edge from parent/.style={->,draw},>=latex]
+\node[root] {Canvas API}
+  child {node[level 2] (c1) {Login}}
+  child {node[level 2] (c2) {Add Course}}
+  child {node[level 2] (c3) {Notification}};
+\begin{scope}[every node/.style={level 3}]
+  \node [below of = c1, xshift=12pt] (c11) {curl `api login'};
+  \node [below of = c11] (c12) {curl `api exit'};
+  \node [below of = c12] (c13) {curl `api error'};
+  \node [below of = c2, xshift=12pt] (c21) {curl `api terms'};
+  \node [below of = c21] (c22) {curl `api add'};
+  \node [below of = c22] (c23) {curl `api cancel'};
+  \node [below of = c23] (c24) {curl `api error'};
+  \node [below of = c3, xshift=12pt] (c31) {curl `api notify'};
+  \node [below of = c31] (c32) {curl `api error'};
+\end{scope}
+\foreach \value in {1,2,3}
+  \draw[->] (c1.195) |- (c1\value.west);
+\foreach \value in {1,...,4}
+  \draw[->] (c2.195) |- (c2\value.west);
+\foreach \value in {1,2}
+  \draw[->] (c3.195) |- (c3\value.west);
+\end{tikzpicture}

@@ -1,8 +1,21 @@
-\documentclass[12pt,legalpaper]{article}
+\documentclass[a4paper,11pt]{article}
 \usepackage[top=1.0in,left=1.0in,bottom=1.0in,right=1.0in]{geometry}
+\usepackage[dvipsnames]{xcolor}
 \usepackage[utf8]{inputenc}
-\usepackage{amssymb,amsmath,amsthm,latexsym}
 \usepackage{graphicx,import}
+\usepackage{smartdiagram}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{tikz,tikz-uml}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+\hypersetup{colorlinks=true,urlcolor=red}
+\def\TEX{\textcolor{blue}{\LaTeX}}
+\tikzset{
+  basic/.style = {draw,text width=2cm,drop shadow,font=\sffamily,rectangle},
+  root/.style = {basic,rounded corners=2pt,thin,align=center,fill=green!30},
+  level 2/.style = {basic,rounded corners=6pt,thin,align=center,fill=green!60,text width=8em},
+  level 3/.style = {basic,thin,align=center,fill=pink!60,text width=7em}
+}
 \begin{document}
   \import{./}{titlepage.tex}
   \import{./}{scrum.tex}
