@@ -1,0 +1,80 @@
+\begin{tikzpicture} 
+  \begin{umlseqdiag}
+    \umlactor[no ddots,x=-1,y=0.5]{user}
+    \umlobject[no ddots,x=3.5,y=0.5,fill=blue!10]{login} 
+    \umlmulti[no ddots,y=0.5,fill=blue!10]{courses}
+    \umldatabase[no ddots,y=0.5,fill=blue!10]{db}
+    \begin{umlfragment}[type=api,name=api,fill=lightgray!20]
+      \begin{umlcall}
+        [op={login(id,pw)},
+        type=synchron,
+        dt=10]{user}{login}% user -> login
+        \begin{umlcall}
+          [op={input(id,course)},
+          type=synchron,
+          dt=1]{login}{courses}% login -> courses
+          \begin{umlcall}
+            [op={add(id,course)},
+            type=synchron,
+            dt=1]{courses}{db}% course -> db
+            \begin{umlcall}
+              [type=return,
+              draw=lightgray!20,
+              dt=1]{db}{courses}
+            \end{umlcall}% invisible
+            \begin{umlcall}
+              [type=asynchron,
+              draw=lightgray!20,
+              fill=green!20,
+              dt=9]{user}{login}
+            \end{umlcall}% invisible
+            \begin{umlcall}
+              [op=notification(),
+              type=synchron,
+              fill=green!20,
+              dt=5]{db}{user}
+            \end{umlcall}% notify user
+            \begin{umlcallself}
+              [op={\http{500}},
+              type=return,
+              fill=red!30,
+              draw=red!90,
+              dt=3.3]{db}
+            \end{umlcallself}% 500 Internal Server Error
+            \begin{umlcallself}
+              [op={\http{400}},
+              type=return,
+              fill=red!30,
+              draw=red!90,
+              dt=10.5]{courses}
+            \end{umlcallself}% 400 Bad Request
+            \begin{umlcallself}
+              [op={\http{404}},
+              type=return,
+              fill=red!30,
+              draw=red!90,
+              dt=4.5]{login}
+            \end{umlcallself}% 404 Not Found
+            \begin{umlcallself}
+              [op={\http{401}},
+              type=return,
+              fill=red!30,
+              draw=red!90]{user}
+            \end{umlcallself}% 401 Unauthorized
+          \end{umlcall}% courses -> db
+        \end{umlcall}% login -> courses
+      \end{umlcall}% user -> login
+    \end{umlfragment}
+    \umlsdnode[dt=4]{db} 
+    \umlsdnode[dt=2]{courses} 
+    \umlnote[x=-1,y=-13,fill=yellow!30]{login}{
+      \scriptsize\textbf{\textcolor{red}{DISCLAIMER}:}\\
+      user is responsible to login and provide correct data/pdf}
+    \umlnote[x=5,y=-13,fill=yellow!30]{courses}{
+      \scriptsize\textbf{Prototype:}
+      \\hardcode data\\~\\\textbf{Evaluation:}\\extract data (pdf)}
+    \umlnote[x=11,y=-13,fill=yellow!30]{db}{
+      \scriptsize\textbf{Prototype:}
+      \\sql server locally\\~\\\textbf{Evaluation:}\\sql server docker}
+  \end{umlseqdiag} 
+\end{tikzpicture}

@@ -1,0 +1,93 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mainsty}[2020/09/11]
+\RequirePackage[a4paper,left=20mm,top=20mm,right=20mm]{geometry}
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage[scaled]{beramono}
+\RequirePackage[english]{babel}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{amssymb,amsmath,amsthm,latexsym}
+\RequirePackage{graphicx,import,color,listings}
+\RequirePackage{import,hyperref}
+\RequirePackage{tikz,tikz-uml}
+\usetikzlibrary{shapes,arrows}
+%  style url links
+\hypersetup{
+  colorlinks=true,
+  linkcolor=green,
+  filecolor=blue,
+  urlcolor=red,}
+% defined colors
+\definecolor{codebg}{rgb}{0.94,0.97,1.0}
+\definecolor{codereg}{rgb}{0.1,0.14,0.13}
+\definecolor{codecmt}{rgb}{0.3,0.73,0.09}
+\definecolor{codekey}{rgb}{0.58,0.34,0.92}
+\definecolor{codeerr}{rgb}{0.0,0.81,0.82}
+\definecolor{codestr}{rgb}{1.0,0.51,0.26}
+\definecolor{codered}{rgb}{0.94,0.19,0.22}
+% listing for python
+\lstset{language=Python,
+  tabsize=2,
+  framesep=5pt,
+  frame=single,
+  framerule=1pt,
+  columns=fixed,
+  keepspaces=true,
+  extendedchars=true,
+  escapeinside={\%*}{*},
+  showstringspaces=false,
+  morekeywords=[1]{as},
+  morekeywords=[2]{Exception},
+  rulecolor=\color{codered},
+  backgroundcolor=\color{codebg},
+  basicstyle=\color{codereg}\ttfamily\small,
+  commentstyle=\color{codecmt}\itshape\small,
+  stringstyle=\color{codestr}\bfseries\small,
+  keywordstyle=[1]\color{codekey}\bfseries\small,
+  keywordstyle=[2]\color{codeerr}\bfseries\small,
+  prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}}),
+}
+% defined functions for titlepage
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\def\csun{
+  \center\Huge\textbf{California State University, Northridge}\\[1cm]
+  \includegraphics[scale=0.1]{images/CSUNS.svg.png}\\[1cm]\HRule~\\[0.4cm]
+}% Title and logo
+\def\course{{
+  \huge\textsc{\kc}\\\huge\textsc{\aweco}\,\texttrademark}
+  \HRule~\\[0.4cm]
+  \Large\textbf{Computer Science 490\\Senior Design}\\[0.2cm]
+  \normalsize\textbf{Project 1}\\[0.2cm]
+}% Class Heading
+\def\logo{
+  \includegraphics[scale=0.9]{images/logo.png}
+  \vspace*{-0.3cm}\\\tiny Developed By:~\aweco~\\[2cm]
+}% Company design and logo
+\def\heading{
+  \begin{minipage}{0.4\textwidth}
+    \large\centering\textsc{Professor Chaja}\\
+    \textsc{Philip D. Kim}\\
+    \textsc{ID:\ 108508736}\\
+    \textsc{\today}
+  \end{minipage}
+}% Name Heading
+\def\kc{
+  \(\mathcal{K}\)evin \(\mathcal{C}\)haja
+}% Company font
+\def\aweco{
+  \(\mathcal{A}\)wesome \(\mathcal{C}\)ompany \(\mathcal{I}\)nc
+}% Company font
+\def\secs#1{\textsc{\LARGE\bf#1}}% Topic sections
+% defined functions for links
+\def\python{\href{https://www.python.org/}{Python 3.7.7}}
+\def\selenium{\href{https://www.selenium.dev/documentation/en/front_matter/copyright_and_attributions/}{Selenium}}
+\def\canvas{\href{https://canvas.instructure.com/doc/api/}{Canvas LMS API}}
+\def\script{\textcolor{codeerr}{canvas.py}}
+\def\settings{\textcolor{blue}{settings.py}}
+% Defined functions for architecture
+\def\http#1{\(_{#1}^{http}\)}
+\def\U{\textcolor{blue}{\bf \#U}}
+\def\P{\textcolor{blue}{\bf \#P}}
+\def\C{\textcolor{red}{\bf C}}
+\def\user{\U sername:}
+\def\pass{\P assword:}

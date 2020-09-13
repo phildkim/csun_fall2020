@@ -1,0 +1,39 @@
+
+\begin{tikzpicture}
+  \begin{umlpackage}[fill=green!10,y=-8]{selenium}
+    % terminal start of uml diagram
+    \begin{umlpackage}[y=-1.3,scale=1,fill=black!70,text=white]{terminal}
+      \umlclass[fill=black!80, draw=white, text=white]{user}{username : str\\password : str}{set(u,p) : api\\get(u,p) : api\\~~click() : api}%{username : str\\password : str}{set(u,p) : api\\get(u,p) : api\\~~click() : api}% \umlclass{script}{username : str\\password : str\\~courseid : str}{}
+    \end{umlpackage} 
+    % user interface
+    \begin{umlpackage}[y=-15,scale=1,fill=black!70,text=white]{gui}
+      \umlclass[fill=black!80, draw=white, text=white]{script}{username : str\\password : str}{set(u,p) : api\\get(u,p) : api\\~~click() : api}% \umlclass{gui}{username : str\\password : str\\~courseid : str}{}
+    \end{umlpackage}
+     % canvas login page
+     \begin{umlpackage}[x=12,y=-1.3,scale=1,fill=red!30]{login} 
+      \umlclass{canvas}{username : str\\password : str}{set(u,p) : api\\get(u,p) : api\\~~click() : api}
+    \end{umlpackage}
+    % canvas menu page
+    \begin{umlpackage}[x=12,y=-15,scale=1,fill=red!30]{menu} 
+      \umlclass{menu}{username : str\\password : str}{set(u,p) : api\\get(u,p) : api\\~~click() : api}
+    \end{umlpackage}
+    % sql server
+    \begin{umlseqdiag} 
+      \umldatabase[x=6,y=-8,scale=1,fill=gray!40]{database}
+    \end{umlseqdiag} 
+    % selenium
+    \umlNarynode[name=selenium1,x=6,y=-1.3,fill=green!40]{}
+    \umlaggreg[mult=err,arg=1,pos=0.1,angle1=110,angle2=60,loopsize=2.5cm]{selenium1}{selenium1}
+    \umlassoc[arg1=send data,mult1=1..3,pos1=0.25]{terminal}{selenium1}
+    \umldep[arg1=http 404,mult1=1,pos1=0.9]{database}{selenium1}
+    \umlassoc[arg1=auth credent,mult1=1..3,pos1=0.7]{selenium1}{login}
+    \umlVHassoc[arg1=fetch,mult1=1,pos1=0.9]{login}{database}
+    \umlVHinherit{menu}{database}
+    \umlNarynode[name=selenium3,x=6,y=-15,fill=green!40]{}
+    \umlaggreg[arg=err,mult=1,pos=0.1,angle1=-110,angle2=-60,loopsize=2.5cm]{selenium3}{selenium3}
+    \umlassoc{selenium3}{menu}
+    \umldep[arg1=http 202,mult1=1,pos1=0.9]{database}{selenium3}
+    \umlHVcompo[arg1=notify,mult1=1..*,pos1=0.2]{gui}{selenium3}
+    \umluniaggreg[arg1=notify,mult1=1,pos1=0.9]{gui}{terminal}
+  \end{umlpackage} 
+\end{tikzpicture}
