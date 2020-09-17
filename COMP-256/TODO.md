@@ -4,9 +4,9 @@
 
 - [X] **_August 31, September 2_**: Section 2.1 - 2.7, ~~Proofs~~
 
-- [ ] **_September 9_**: Section 3.1 - 3.7, Sets
+- [X] **_September 9_**: Section 3.1 - 3.7, Sets
 
-- [ ] **_September 14, 16_**: Section 4.1 - 4.5, Functions
+- [X] **_September 14, 16_**: Section 4.1 - 4.5, Functions
 
 - [ ] **_September 21, 23_**: Section 5.1 - 5.5, Boolean Algebra
 

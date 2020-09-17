@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,amsthm,latexsym}
+\begin{document}
+\begin{center}
+  \section*{PROOF}
+\end{center}
+  \subsection*{Question}
+  Write down the numbers \(1,2,\dots,2n\) where \(n\) is an odd integer. 
+  Pick any two numbers \(j,k\) and replace them with \(|j-k|\). Continue 
+  this process until only one number remains. Prove that this integer 
+  must be odd.
+  \subsection*{Answer}
+  Consider the possible combinations for \(j\) and \(k\):
+  \begin{enumerate}
+    \item Without loss of generality, \(j\) is odd and \(k\) is even. 
+    \(|j-k|\) is, therefore, odd; reducing the number of evens in 
+    the list by one.
+    \item In the case where \(j\) and \(k\) are both even, \(|j-k|\) is even. 
+    This reduces the number of even numbers in the list by one.
+    \item In the case where \(j\) and \(k\) are both odd, \(|j-k|\) is even. 
+    This reduces the number of odd numbers in the list by two, and 
+    increases the number of even numbers by one.
+  \end{enumerate}
+  Since case 3 is the only one in which the number of odd integers is 
+  reduced in the list, and since that number is reduced by 2 in each 
+  application, it must be applied \(l\) times for \(n = 2l + 1\). Leaving one 
+  odd integer. Any application of cases 1 or 2 will not result in the 
+  reduction of odd numbers. Thus, the remaining integer must be odd, 
+  completing the proof.
+\end{document}

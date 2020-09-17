@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,amsthm,latexsym}
+\begin{document}
+\begin{center}
+  \section*{SETS}
+\end{center}
+\subsection*{Question}
+\begin{align}
+  Prove: \overline{A} &\equiv \left(\Omega \setminus A \right) \cup \overline{\left(A \cup \left( C \cap B \right)\right)} & State~proof
+\end{align}
+\subsection*{Answer}
+\begin{align}
+  \left(\Omega \setminus A \right) \cup \overline{\left(A \cup \left( C \cap B \right)\right)} &\equiv \overline{A} \cup \overline{\left(A \cup \left( C \cap B \right)\right)} & Definition\\
+  \overline{A} &\equiv \overline{A} \cup \overline{\left(A \cup \left(C \cap B\right) \right)} & Difference\\
+  \overline{A} &\equiv \overline{A} \cup \left(\overline{A} \cap \overline{C \cap B} \right) & DeMorgan\\
+  \overline{A} &\equiv \overline{A} \cup \left( \overline{C \cap B} \cap \overline{A} \right) & Commutative\\
+  \overline{A} &\equiv \overline{A} & Absorption
+\end{align}
+\end{document}

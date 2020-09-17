@@ -6,9 +6,9 @@
 sub-typing, virtual dispatch; Functional/immutable lists:
 representation and operations~~;
 
-- [ ] 3. _**Mon 9/8 – Sun 9/10**_: Class-based OOP spillover; JavaScript introduction, types introduction (static vs dynamic, strong vs. weak, untyped);
+- [X] 3. _**Mon 9/8 – Sun 9/10**_: Class-based OOP spillover; JavaScript introduction, types introduction (static vs dynamic, strong vs. weak, untyped);
 
-- [ ] 4. _**Mon 9/15 – Sun 9/17**_: Higher-order functions: use
+- [X] 4. _**Mon 9/15 – Sun 9/17**_: Higher-order functions: use
 and high-level representation; Prototype-based inheritance;
 
 - [ ] 5. _**Mon 9/22 – Sun 9/24**_: Prototype-based inheritance; JavaScript spillover;
