@@ -44,7 +44,7 @@ public class Cons implements ImmutableList {
   } // length
 
   public boolean contains(final int value) {
-    return this.tail.contains(value) || this.tail.hashCode() == value || this.head == value;
+    return this.head == value || this.tail.contains(value);
   } // contains
 
   public ImmutableList append(final ImmutableList other) {
