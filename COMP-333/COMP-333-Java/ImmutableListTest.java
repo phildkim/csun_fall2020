@@ -1,3 +1,5 @@
+
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
@@ -5,7 +7,7 @@ import org.junit.Test;
 
 public class ImmutableListTest {
   
-  //#region ---BEGIN EQUALS TESTS---
+  // ---BEGIN EQUALS TESTS---
   @Test
   public void equalsNilNil() {
     assertTrue(new Nil().equals(new Nil()));
@@ -58,7 +60,7 @@ public class ImmutableListTest {
     final ImmutableList second = new Cons(3, new Cons(4, new Nil()));
     assertFalse(first.equals(second));
   } // equalsConsConsDifferentElementsLength2_3
-  //#endregion ---END EQUALS TESTS---
+  // ---END EQUALS TESTS---
 
   //#region ---BEGIN LENGTH TESTS---
   @Test
@@ -81,9 +83,9 @@ public class ImmutableListTest {
     final ImmutableList list = new Cons(-4, new Cons(87, new Cons(0, new Nil())));
     assertEquals(3, list.length());
   } // lengthLength3
-  //#endregion ---END LENGTH TESTS---
+  // ---END LENGTH TESTS---
 
-  //#region ---BEGIN SUM TESTS---
+  // ---BEGIN SUM TESTS---
   @Test
   public void sumLength0() {
     assertEquals(0, new Nil().sum());
@@ -103,9 +105,9 @@ public class ImmutableListTest {
   public void sumLength3() {
     assertEquals(12, new Cons(6, new Cons(0, new Cons(6, new Nil()))).sum());
   } // sumLength3
-  //#endregion ---END SUM TESTS---
+  // ---END SUM TESTS---
 
-  //#region ---BEGIN APPEND TESTS---
+  // ---BEGIN APPEND TESTS---
   @Test
   public void appendNilNil() {
     final ImmutableList first = new Nil();
@@ -114,7 +116,6 @@ public class ImmutableListTest {
     assertEquals(expected, first.append(second));
   } // appendNilNil
 
-  /* FAILED */
   @Test
   public void appendConsNil() {
     final ImmutableList first = new Cons(0, new Nil());
@@ -178,7 +179,7 @@ public class ImmutableListTest {
     final ImmutableList expected = new Cons(1, new Cons(2, new Cons(3, new Nil())));
     assertEquals(expected, first.append(second));
   } // appendConsConsDifferentLength_4
-  //#endregion ---END APPEND TESTS---
+  // ---END APPEND TESTS---
 
   //#region ---BEGIN CONTAINS TESTS---
   @Test
@@ -205,9 +206,9 @@ public class ImmutableListTest {
   public void doesNotContain() {
     assertFalse(new Cons(0, new Cons(-1, new Cons(1, new Nil()))).contains(3));
   } // doesNotContain
-  //#endregion ---END CONTAINS TESTS---
+  // ---END CONTAINS TESTS---
 
-  //#region ---BEGIN TOSTRING TESTS---
+  // ---BEGIN TO STRING TESTS---
   @Test
   public void toStringNil() {
     assertEquals("Nil", new Nil().toString());
@@ -235,6 +236,6 @@ public class ImmutableListTest {
     final ImmutableList list = new Cons(0, new Cons(1, new Cons(2, new Cons(3, new Nil()))));
     assertEquals("Cons(0, Cons(1, Cons(2, Cons(3, Nil))))", list.toString());
   } // toStringLength4
-  //#endregion ---END TOSTRING TESTS
+  // ---END TO STRING TESTS
 
 } // ImmutableListTest
