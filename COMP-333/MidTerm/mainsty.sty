@@ -1,0 +1,35 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mainsty}[2020/09/25]
+\RequirePackage[left=0.8in,top=1.0in,right=1.0in,bottom=1.0in]{geometry}
+\RequirePackage{amssymb,amsmath,amsthm,latexsym}
+\RequirePackage{graphicx,import,color,listings}
+% defined colors
+\definecolor{codebg}{rgb}{0.94,0.97,1.0}
+\definecolor{codereg}{rgb}{0.1,0.14,0.13}
+\definecolor{codecmt}{rgb}{0.3,0.73,0.09}
+\definecolor{codekey}{rgb}{0.58,0.34,0.92}
+\definecolor{codeerr}{rgb}{0.0,0.81,0.82}
+\definecolor{codestr}{rgb}{1.0,0.51,0.26}
+\definecolor{codered}{rgb}{0.94,0.19,0.22}
+% listing for python
+\lstset{language=Java,
+  tabsize=2,
+  framesep=5pt,
+  frame=single,
+  framerule=1pt,
+  columns=fixed,
+  keepspaces=true,
+  extendedchars=true,
+  escapeinside={\%*}{*},
+  showstringspaces=false,
+  morekeywords=[1]{as},
+  morekeywords=[2]{Exception},
+  rulecolor=\color{codered},
+  backgroundcolor=\color{codebg},
+  basicstyle=\color{codereg}\ttfamily\small,
+  commentstyle=\color{codecmt}\itshape\small,
+  stringstyle=\color{codestr}\bfseries\small,
+  keywordstyle=[1]\color{codekey}\bfseries\small,
+  keywordstyle=[2]\color{codeerr}\bfseries\small,
+  prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}}),
+}

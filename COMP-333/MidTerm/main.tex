@@ -1,0 +1,71 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{mainsty}
+\begin{document}
+  \begin{center}
+    \large\textsc{Comp 333 Midterm}
+  \end{center}
+  \begin{enumerate}
+    \item Name one reason why someone might want to use virtual dispatch. % 1
+    \begin{itemize}
+      \item 
+    \end{itemize}
+    \item Name one reason why someone might not want to use virtual dispatch. % 2
+    \begin{itemize}
+      \item
+    \end{itemize}
+    \clearpage
+    \item Consider the following Java code: % 3
+    \begin{itemize}
+      \item[] \lstinputlisting[language=Java,firstline=2,lastline=12]{java/Main.java}
+      \item[] \lstinputlisting[language=Java,firstline=2,lastline=4]{java/I1.java}
+      \item[] \lstinputlisting[language=Java,firstline=3,lastline=7]{java/C1.java}
+      \item[] \lstinputlisting[language=Java,firstline=3,lastline=7]{java/C2.java}
+      \item[] What is the output of the main method? 
+    \end{itemize}
+    \clearpage
+    \item Consider the following code snippet: % 4
+    \begin{itemize}
+      \item[] \lstinputlisting[language=Java,firstline=2,lastline=12]{java/pr4/Main.java}
+      \item[] Define any interfaces and/or classes necessary to make this snippet print 8, followed by 2. 
+    \end{itemize}
+    \clearpage
+    \item Consider the following Java code, which simulates a lock which can be either locked or
+    unlocked. The lock is an immutable data structure, so locking or unlocking returns a new lock
+    in an appropriate state: Refactor this code to use virtual dispatch, instead of using if/else. As a hint, you should have a
+    base class/interface for Lock, and subclasses for locked and unlocked locks. (Continued on to
+    next page) % 5
+    \begin{itemize}
+      \item[] \lstinputlisting[language=Java,firstline=3,lastline=29]{java/pr5/Lock.java}
+      \item[] Refactor this code to use virtual dispatch, instead of using if/else. As a hint, you should have a
+      base class/interface for Lock, and subclasses for locked and unlocked locks. (Continued on to
+      next page) 
+    \end{itemize}
+    \clearpage
+    \item The code below does not compile. Why? % 6
+    \begin{itemize}
+      \item[] \lstinputlisting[language=Java,firstline=3,lastline=10]{java/pr6/MyClass.java}
+      \item[] \lstinputlisting[language=Java,firstline=3,lastline=10]{java/pr6/MyInterface.java}
+    \end{itemize}
+    \clearpage
+    \item Java supports sub-typing. Write a Java code snippet that compiles and uses sub-typing. % 7
+    \begin{itemize}
+      \item 
+    \end{itemize} 
+    \item Name one reason why someone might prefer static typing over dynamic typing. % 8
+    \begin{itemize}
+      \item 
+    \end{itemize}
+    \item Name one reason why someone might prefer dynamic typing over static typing. % 9
+    \begin{itemize}
+      \item 
+    \end{itemize}
+    \item Name one reason why someone might prefer strong typing over weak typing. % 10
+    \begin{itemize}
+      \item 
+    \end{itemize}
+    \item Name one reason why someone might prefer weak typing over strong typing. % 11
+    \begin{itemize}
+      \item 
+    \end{itemize}
+  \end{enumerate}
+\end{document}
