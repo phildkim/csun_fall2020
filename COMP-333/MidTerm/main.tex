@@ -5,13 +5,23 @@
     \large\textsc{Comp 333 Midterm}
   \end{center}
   \begin{enumerate}
-    \item Name one reason why someone might want to use virtual dispatch. % 1
+    \item Name one reason why someone might want to use \imp{virtual dispatch}. % 1
     \begin{itemize}
-      \item 
+      \item Allows for same method call to have different behaviors at runtime, which is more flexible.
+      \item Allows for abstraction over code behavior. Calling code only needs to know the signature of a method, and the runtime behavior can be dynamically changed by changing the underlying object the method is called on.
+      \item Improves code modularity. Each distinct behavior can be isolated from each other behavior, and behaviors generally don't need to know about each other.
     \end{itemize}
-    \item Name one reason why someone might not want to use virtual dispatch. % 2
+    \item Name one reason why someone might not want to use \imp{virtual dispatch}. % 2
     \begin{itemize}
-      \item
+      \item Code can become more bloated. Usually, multiple classes have to be introduced, and these all have their own boilerplate associated with them.
+      \item Code's behavior can become less explicit, and potentially more difficult to reason about.
+      \begin{itemize}
+        \item For example, an if/else clearly indicates a condition to test and code to execute depending on the condition. However, a method call may implicitly do something similar.
+      \end{itemize}
+      \item It generally has worse performance than an explicit if/else.
+      \begin{itemize}
+        \item Behind the scenes, indirect jumps are often needed, and these can easily jump out of cached instructions. Moreover, it's difficult to predict where an indirect jump will go.
+      \end{itemize}
     \end{itemize}
     \clearpage
     \item Consider the following Java code: % 3
@@ -54,21 +64,27 @@
     \begin{itemize}
       \item 
     \end{itemize} 
-    \item Name one reason why someone might prefer static typing over dynamic typing. % 8
+    \item Name one reason why someone might prefer \imp{static typing} over dynamic typing. % 8
     \begin{itemize}
       \item 
     \end{itemize}
-    \item Name one reason why someone might prefer dynamic typing over static typing. % 9
+    \item Name one reason why someone might prefer \imp{dynamic typing} over static typing. % 9
     \begin{itemize}
       \item 
     \end{itemize}
-    \item Name one reason why someone might prefer strong typing over weak typing. % 10
+    \item Name one reason why someone might prefer \imp{strong typing} over weak typing. % 10
     \begin{itemize}
-      \item 
+      \item Strongly-type languages are more predictable, especially in the presence of bugs and errors.
+      \item Strongly-type languages tend to emphasize code correctness.
     \end{itemize}
-    \item Name one reason why someone might prefer weak typing over strong typing. % 11
+    \item Name one reason why someone might prefer \imp{weak typing} over strong typing. % 11
     \begin{itemize}
-      \item 
+      \item No need for runtime array bounds check, so performance benefit.
+      \item Weakly-typed languages tend to be more expressive. 
+      \begin{itemize}
+        \item C lets you do more than Java in terms of low-level manipulation, but its easy to hit undefined behavior, meaning programs lose all meaning.
+        \item This can happen even when the code appears to be working correctly.
+      \end{itemize}
     \end{itemize}
   \end{enumerate}
 \end{document}
