@@ -128,5 +128,25 @@
       \item[-] Weak typing:\ the type might not be correct; the type can lie 
     \end{itemize} 
     \item[] \imp{Assembly}:\ untyped
+    \clearpage
+    \item Consider the Java class/interface definitions and snippets below. What is the output of the snippet? 
+    \begin{itemize}
+      \item[] \lstinputlisting[language=Java,firstline=2,lastline=19]{java/pr12/Base.java} 
+      \item[] What is the output of the snippet? 
+      \item[] \lstinputlisting[language=Java,firstline=2,lastline=25]{java/pr12/MyInterface.java}
+    \end{itemize}
+    \clearpage
+    \item Consider the following Java snippet:\
+    \begin{itemize}
+      \item[] \lstinputlisting[language=Java,firstline=5,lastline=10]{java/pr13/Main.java}
+      \item[] This code can be rewritten to entirely avoid the `if', by using virtual dispatch instead. 
+      This code is partially rewritten below, where \dots are different `Conditional' expressions:\
+      \item[] \lstinputlisting[language=Java,firstline=12,lastline=13]{java/pr13/Main.java}
+      \item[] Write the remaining code necessary to make the above snippet operate the same as with the
+      `if'. Include what the two uses of \dots above will need to be. As a hint, you will need classes 
+      corresponding to true and false.
+      \item[] ANSWER:\
+      \item[] \lstinputlisting[language=Java,firstline=17,lastline=27]{java/pr13/Main.java}  
+    \end{itemize}
   \end{enumerate}
 \end{document}
