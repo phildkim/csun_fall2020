@@ -52,4 +52,8 @@ public class Cons implements ImmutableList {
   public ImmutableList append(final ImmutableList other) {
     return new Cons(this.head, this.tail.append(other));
   } // append
+
+  public int numEvens() {
+    return this.head % 2 == 0 ? 1 + this.tail.numEvens() : 0;
+  }
 } // Cons

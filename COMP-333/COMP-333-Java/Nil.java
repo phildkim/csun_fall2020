@@ -39,4 +39,7 @@ public class Nil implements ImmutableList {
   public ImmutableList append(final ImmutableList other) {
     return other;
   } // append
+  public int numEvens() {
+    return 0;
+  }
 } // Nil

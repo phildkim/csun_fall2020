@@ -1,6 +1,7 @@
 
 
 public interface ImmutableList {
+    public int numEvens();
     public int sum();
     public int length();
     public int hashCode();

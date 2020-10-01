@@ -7,10 +7,15 @@ import org.junit.Test;
 
 public class ImmutableListTest {
   
+  public void evenConsNil() {
+    
+  }
+
   // ---BEGIN EQUALS TESTS---
   @Test
   public void equalsNilNil() {
-    assertTrue(new Nil().equals(new Nil()));
+    assertEquals(2, new Cons(2, new Cons(4, new Nil())).numEvens());
+    // assertTrue(new Nil().equals(new Nil()));
   } // equalsNilNil
 
   @Test
