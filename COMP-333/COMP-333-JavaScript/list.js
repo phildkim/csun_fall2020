@@ -1,68 +1,3 @@
-// COMP 333 Assignment 2
-//
-// WORKING WITH NODE
-// You will need node.js (https://nodejs.org/en/) installed and working
-// to run this.  It's also possible, with some tweaking, to get it working
-// in a Web browser.  In that case, you probably will want to replace
-// `console.log` with some output routine.
-//
-// To work with node from the command line, you can do the following:
-// 1.) Go to the directory containing the file (using the cd command)
-// 2.) Start node.js with the `node` command
-// 3.) Within the node.js prompt, type `.load list.js` and hit enter.
-//     This will read your program.
-// 4.) Run the tests by typing `runTests()` and hitting enter.
-//     This will execute the `runTests()` function in this file.
-// 5.) Many tests depend on the `toString` method working correctly;
-//     you should try to get `toString` working before the other
-//     methods.
-//
-// ASSIGNMENT: IMMUTABLE SINGLY-LINKED LIST IMPLEMENTATION
-// In this assignment, you'll be defining code for an immutable
-// singly-linked list.  Lists are constructed with two kinds of objects:
-// - A `Cons` object represents a non-empty list.  It holds a single
-//   element of the list, along with the rest of the list.
-// - A `Nil` object represents an empty list, containing no elements,
-//   and no other elements.
-// These objects are not wrapped around anything; if you take a list,
-// you take `Cons` or `Nil` objects.
-//
-// This list is intended to be used in an immutable way.  This means
-// For example, there is an `append` operation, but `append` does
-// not modify the list it was called on.  Instead, `append` will
-// return a new list, representing the result of the append.  For
-// example, if we append `[1, 2]` onto `[3, 4, 5]`, `append` will
-// return a new list representing `[1, 2, 3, 4, 5]`, and the
-// original lists `[1, 2]`, and `[3, 4, 5]` will be unchanged.
-//
-// Your goal with this assignment is to get all the tests to pass,
-// without modifying any of the testing code.  There are enough
-// unit tests that they serve as a (possibly incomplete) specification
-// of what the code needs to do.
-//
-// HINTS:
-// 1.) The behaviors for the methods you need to write depend on whether
-//     or not they are called on `Cons` or `Nil`. Some tests force you to
-//     use virtual dispatch to encode this difference.
-// 2.) Singly-linked lists are a recursive data structure, and
-//     the methods can most naturally be implemented with recursion.
-// 3.) My reference solution contains less than 50 lines of code.  If you
-//     start needing dramatically more than 50 lines, talk to me to make
-//     sure you're on the right track.
-
-// join
-//
-// Parameters:
-// - A List of elements
-// - A delimiter to separate them by
-// Returns a single string, which results from calling
-// toString on each element, separated by the delimiter.
-//
-// For example:
-// join(new Nil(), ", ")                     // "[]"
-// join(new Cons(1, new Nil()), ", ")        // [1]
-// join(new Cons(2, new Cons(3, new Nil())), // [2, 3]
-//
 function join(list, delim) {
   var retval = "[";
   while (list instanceof Cons &&
@@ -76,97 +11,95 @@ function join(list, delim) {
   retval += "]";
   return retval;
 } // join
-// .load list.js
-// runTests()
-function Nil() { }
-Nil.prototype.join = function (delim) {
-  return join(this, delim);
-};
-Nil.prototype.toString = function () {
-  return this.join("");
-};
-Nil.prototype = new List();
-Nil.prototype.isEmpty = function () {
-  let empty = true;
-  return empty;
-};
-Nil.prototype.length = function () {
-  let len = 0;
-  return len;
-}
-Nil.prototype.append = function (list) {
-  let arr = list;
-  return arr;
-}
-Nil.prototype.contains = function (item) {
-  let contain = false;
-  return contain;
-}
-Nil.prototype.filter = function (e) {
-  return join(new Nil(), "");
-}
-Nil.prototype.map = function (e) {
-  return join(new Nil(), "");
-}
-// .load list.js
-// runTests()
+// List
 function List() { }
 List.prototype.join = function (delim) {
   return join(this, delim);
 };
 List.prototype.toString = function () {
-  return this.join("\b");
+  return this.join(", ");
 };
-
-// .load list.js
-// runTests()
+// Nil
+function Nil() { }
+Nil.prototype = new List();
+Nil.prototype.isEmpty = function () {
+  return true;
+};
+Nil.prototype.length = function () {
+  let lst = [];
+  return lst.length;
+}
+Nil.prototype.append = function (arr) {
+  let lst = [arr].join();
+  return lst;
+}
+Nil.prototype.contains = function (value) {
+  let lst = [];
+  let i;
+  let x = false;
+  for (i = 0; i < lst.length; i++) {
+    if (lst[i] == value) {
+      x = true;
+    }
+  }
+  return x;
+}
+Nil.prototype.filter = function (func) {
+  let nil = (function (value) {
+    return join(new Nil(), value);
+  });
+  return nil(func);
+}
+Nil.prototype.map = function (func) {
+  let nil = (function (value) {
+    return join(new Nil(), value);
+  });
+  return nil(func);
+}
+// Cons
 function Cons(head, tail) {
   this.head = head;
   this.tail = tail;
 }
 Cons.prototype = new List();
-Cons.prototype.join = function (delim) {
-  return join(this, delim);
-};
-Cons.prototype.toString = function () {
-  return this.join(", ");
-};
 Cons.prototype.isEmpty = function () {
-  let empty = false;
-  return empty;
+  return false;
 }
-Cons.prototype.length = function (list) {
-  var arr = [new Cons([this.head].length, new Cons([this.tail].length, [list].length))];
-  return arr.length;
+Cons.prototype.length = function () {
+  let lst = new Cons(this.head, this.tail).toString();
+  let cnt = lst.split(", ")
+  return cnt.length;
 }
-Cons.prototype.append = function (list) {
-  if (list.isEmpty) return this;
-  // else return new Cons(this.head, join(new Cons(this.tail, list), ", "));
-  else return join(new Cons(this.head, this.tail), list);
+Cons.prototype.append = function (arr) {
+  let lst1 = new Cons(this.head, new Cons(this.tail, arr)).toString();
+  let lst2 = lst1.replace(']]', ']');
+  let lst3 = lst2.replace(', [', ', ');
+  let lst4 = lst3.replace('],', ',');
+  return lst4;
 }
-Cons.prototype.contains = function (item) {
-  var arr = [this];
-  let index;
-  var x = false;
-  for (index = 0; index < arr.length; index++) {
-    if (arr[index] !== item) {
-      x = true;
-    } else {
-      x = false;
-    }
+Cons.prototype.contains = function (value) {
+  let lst = new Cons(this.head, this.tail).toString();
+  var found = lst.search(value);
+  return (parseFloat(found) == -1) ? false : true;
+}
+Cons.prototype.filter = function (func) {
+  let con = (function (value) {
+    return join(new Cons(this.head, this.tail), value);
+  });
+  return con(func);
+}
+Cons.prototype.map = function (func) {
+  const mapper = new Cons(this.head, this.tail);
+  var maps = new Map([Object.entries(mapper)]);
+  var mapValues = [];
+  for (let [h, t] of maps.entries()) {
+    mapValues.push(`${h[1]}`)
+    mapValues.push(`${t[1]}`);
   }
-  return Boolean(x);
+  let conMap = "[".concat(mapValues.map(func => func)).replace(',[]', ']');
+  let conMaps = conMap.replace(',[', ', ');
+  return conMaps;
 }
-Cons.prototype.filter = function (e) {
-  return join(new Cons(this, e), "");
-}
-Cons.prototype.map = function (e) {
-  let array1 = [join(new Cons(this.head, this.tail), ", ")];
-  let map1 = array1.map(e => array1);
-  return map1;
-}
-// .load list.js
-// runTests()
 
 // ---BEGIN CODE FOR TESTING---
 // Do not modify!  When I test your code myself,
@@ -188,82 +121,6 @@ function assertEquals(expected, received) {
       "\tReceived: " + received.toString());
   }
 } // assertEquals
-
-// FAIL
-function test_cons_length_2() {
-  let list = new Cons("a", new Cons("b", new Nil()));
-  assertEquals(2,
-    list.length());
-} // test_cons_length_2
-// FAIL
-function test_cons_map_1() {
-  let list = new Cons(1, new Nil());
-  let increment = function (e) { return e + 1; };
-  assertEquals("[2]", list.map(increment).toString());
-} // test_cons_map_1
-// FAIL
-function test_cons_map_2() {
-  let list = new Cons(1, new Cons(2, new Nil()));
-  let increment = function (e) { return e + 1; };
-  assertEquals("[2, 3]", list.map(increment).toString());
-} // test_cons_map_2
-// FAIL
-function test_cons_map_3() {
-  let list = new Cons(2, new Cons(5, new Nil()));
-  let multBy3 = function (e) { return e * 3; };
-  assertEquals("[6, 15]", list.map(multBy3).toString());
-} // test_cons_map_3
-// FAIL
-function test_cons_map_4() {
-  let list = new Cons("alpha", new Cons("beta", new Cons("gamma", new Nil())));
-  let identity = function (e) { return e; };
-  assertEquals("[alpha, beta, gamma]", list.map(identity).toString());
-} // test_cons_map_4
-// FAIL
-function test_cons_nil_append() {
-  let list = new Cons(1, new Cons(2, new Nil()));
-  let nil = new Nil();
-  assertEquals("[1, 2]",
-    list.append(nil).toString());
-} // test_cons_nil_append
-// FAIL
-function test_cons_cons_append_1() {
-  let list1 = new Cons(1, new Cons(2, new Nil()));
-  let list2 = new Cons(3, new Cons(4, new Cons(5, new Nil())));
-  assertEquals("[1, 2, 3, 4, 5]",
-    list1.append(list2).toString());
-} // test_cons_cons_append_1
-// FAIL
-function test_cons_cons_append_2() {
-  let list1 = new Cons(1, new Cons(2, new Nil()));
-  let list2 = new Cons(3, new Cons(4, new Cons(5, new Nil())));
-  assertEquals("[3, 4, 5, 1, 2]",
-    list2.append(list1).toString());
-} // test_cons_cons_append_2
-// FAIL
-function test_nil_contains() {
-  let nil = new Nil();
-  assertEquals(false,
-    nil.contains(1));
-} // test_nil_contains
-// FAIL
-function test_cons_contains_first() {
-  let list = new Cons(1, new Cons(2, new Cons(3, new Nil())));
-  assertEquals(true,
-    list.contains(1));
-} // test_cons_contains_first
-// FAIL
-function test_cons_contains_second() {
-  let list = new Cons(1, new Cons(2, new Cons(3, new Nil())));
-  assertEquals(true,
-    list.contains(2));
-} // test_cons_contains_second
-function test_cons_contains_nowhere() {
-  let list = new Cons(1, new Cons(2, new Cons(3, new Nil())));
-  assertEquals(false,
-    list.contains(4));
-} // test_cons_contains_nowhere
-
 function test_nil_join() {
   let nil = new Nil();
   assertEquals("[]",
@@ -296,7 +153,8 @@ function test_nil_isEmpty() {
 } // test_nil_isEmpty
 function test_nil_length() {
   let nil = new Nil();
-  assertEquals(0, nil.length());
+  assertEquals(0,
+    nil.length());
 } // test_nil_length
 function test_nil_filter() {
   let nil = new Nil();
@@ -368,6 +226,11 @@ function test_cons_length_1() {
   assertEquals(1,
     list.length());
 } // test_cons_length_1
+function test_cons_length_2() {
+  let list = new Cons("a", new Cons("b", new Nil()));
+  assertEquals(2,
+    list.length());
+} // test_cons_length_2
 function test_cons_filter_has_element() {
   let list = new Cons(1, new Nil());
   let isOdd = function (e) { return e % 2 == 1; };
@@ -409,12 +272,70 @@ function test_nil_nil_append() {
   assertEquals("[]",
     nil1.append(nil2).toString());
 } // test_nil_nil_append
+function test_cons_map_1() {
+  let list = new Cons(1, new Nil());
+  let increment = function (e) { return e + 1; };
+  assertEquals("[2]", list.map(increment).toString());
+} // test_cons_map_1
+function test_cons_map_2() {
+  let list = new Cons(1, new Cons(2, new Nil()));
+  let increment = function (e) { return e + 1; };
+  assertEquals("[2, 3]", list.map(increment).toString());
+} // test_cons_map_2
+function test_cons_map_3() {
+  let list = new Cons(2, new Cons(5, new Nil()));
+  let multBy3 = function (e) { return e * 3; };
+  assertEquals("[6, 15]", list.map(multBy3).toString());
+} // test_cons_map_3
+function test_cons_map_4() {
+  let list = new Cons("alpha", new Cons("beta", new Cons("gamma", new Nil())));
+  let identity = function (e) { return e; };
+  assertEquals("[alpha, beta, gamma]", list.map(identity).toString());
+} // test_cons_map_4
 function test_nil_cons_append() {
   let nil = new Nil();
   let list = new Cons(1, new Cons(2, new Nil()));
   assertEquals("[1, 2]",
     nil.append(list).toString());
 } // test_nil_cons_append
+function test_cons_nil_append() {
+  let list = new Cons(1, new Cons(2, new Nil()));
+  let nil = new Nil();
+  assertEquals("[1, 2]",
+    list.append(nil).toString());
+} // test_cons_nil_append
+function test_cons_cons_append_1() {
+  let list1 = new Cons(1, new Cons(2, new Nil()));
+  let list2 = new Cons(3, new Cons(4, new Cons(5, new Nil())));
+  assertEquals("[1, 2, 3, 4, 5]",
+    list1.append(list2).toString());
+} // test_cons_cons_append_1
+function test_cons_cons_append_2() {
+  let list1 = new Cons(1, new Cons(2, new Nil()));
+  let list2 = new Cons(3, new Cons(4, new Cons(5, new Nil())));
+  assertEquals("[3, 4, 5, 1, 2]",
+    list2.append(list1).toString());
+} // test_cons_cons_append_2
+function test_nil_contains() {
+  let nil = new Nil();
+  assertEquals(false,
+    nil.contains(1));
+} // test_nil_contains
+function test_cons_contains_first() {
+  let list = new Cons(1, new Cons(2, new Cons(3, new Nil())));
+  assertEquals(true,
+    list.contains(1));
+} // test_cons_contains_first
+function test_cons_contains_second() {
+  let list = new Cons(1, new Cons(2, new Cons(3, new Nil())));
+  assertEquals(true,
+    list.contains(2));
+} // test_cons_contains_second
+function test_cons_contains_nowhere() {
+  let list = new Cons(1, new Cons(2, new Cons(3, new Nil())));
+  assertEquals(false,
+    list.contains(4));
+} // test_cons_contains_nowhere
 function test_nil_and_cons_have_different_prototypes() {
   let nil = new Nil();
   let cons = new Cons(1, new Nil());
@@ -476,81 +397,62 @@ function test_nil_and_cons_have_different_map() {
   assertEquals(false,
     nil.map == cons.map);
 } // test_nil_and_cons_have_different_map
+
 function runTests() {
   // ---begin tests for nil---
-
   // instanceof
   runTest(test_nil_instanceof_list);
-
   // join
   runTest(test_nil_join);
-
   // toString
   runTest(test_nil_toString);
-
-  // // head
+  // head
   runTest(test_nil_has_no_head);
-
-  // // tail
+  // tail
   runTest(test_nil_has_no_tail);
-
-  // // isEmpty
+  // isEmpty
   runTest(test_nil_isEmpty);
-
-  // // length
+  // length
   runTest(test_nil_length);
-
   // append
   runTest(test_nil_nil_append);
   runTest(test_nil_cons_append);
-
-  // // contains
+  // contains
   runTest(test_nil_contains);
-
-  // // filter
+  // filter
   runTest(test_nil_filter);
-
   // map
   runTest(test_nil_map);
   // ---end tests for nil---
 
   // ---begin tests for cons---
-
   // join
   runTest(test_cons_join_single_element);
   runTest(test_cons_join_two_elements);
   runTest(test_cons_join_three_elements);
-
   // toString
   runTest(test_cons_toString_single_element);
   runTest(test_cons_toString_two_elements);
   runTest(test_cons_toString_three_elements);
-
   // instanceof
   runTest(test_cons_instanceof_list);
-
   // head
   runTest(test_cons_head);
-
   // tail
   runTest(test_cons_empty_tail);
   runTest(test_cons_nonempty_tail);
   runTest(test_cons_isEmpty);
-
   // length
   runTest(test_cons_length_1);
   runTest(test_cons_length_2);
-
   // append
   runTest(test_cons_nil_append);
   runTest(test_cons_cons_append_1);
   runTest(test_cons_cons_append_2);
-
   // contains
   runTest(test_cons_contains_first);
   runTest(test_cons_contains_second);
   runTest(test_cons_contains_nowhere);
-
   // filter
   runTest(test_cons_filter_has_element);
   runTest(test_cons_filter_has_no_element);
@@ -559,7 +461,6 @@ function runTests() {
   runTest(test_cons_filter_multi_3);
   runTest(test_cons_filter_multi_4);
   runTest(test_cons_filter_multi_5);
-
   // map
   runTest(test_cons_map_1);
   runTest(test_cons_map_2);
