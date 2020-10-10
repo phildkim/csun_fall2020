@@ -14,9 +14,11 @@
 ## COMP 333
 
 - [X] ~~<https://kyledewey.github.io/comp333-fall20/assignments/assign_1/>~~
-- [ ] **Midterm October 1st**
+- [X] ~~**Midterm October 1st**~~
+- [X] <https://kyledewey.github.io/comp333-fall20/assignments/assign_2/>
 
 ## COMP 490
 
 - [X] ~~Project 1~~
-- [ ] Project 2 (Group)
+- [X] ~~Project 2 (Group)~~
+- [ ] Create New Resume
