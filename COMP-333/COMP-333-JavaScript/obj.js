@@ -69,17 +69,17 @@ Cons.prototype.contains = function (cons) {
   return (parseInt(immList(new Cons(this.head, new Cons(this.tail, new Nil()))).search(cons)) == -1) ? false : true;
 };
 Cons.prototype.filter = function (cons) {
-  return getImmList(cons, new Cons(this.head, this.tail));
+  return getImmList(cons, new Cons(this.head, this.tail), false);
 };
 Cons.prototype.map = function (cons) {
-  return getImmList(cons, new Cons(this.head, this.tail));
+  return getImmList(cons, new Cons(this.head, this.tail).toString().split(','), true);
 };
-function getImmList(e, c) {
+function getImmList(e, c, m) {
   const h = immList(c);
   const f = (l, t) => {
     const arr = [];
     for (let i in l) {
-      t(i) == true ? arr.push(i) : t['toString'].length;
+      parseInt(i.search(/\d/g)) == -1 ? arr.push(t(i)) : arr.push(t(parseInt(i)));//t(i) == true ? arr.push(i) : i : 
     }
     return immList(new Cons(arr.join(", "), new Nil()));
   };
