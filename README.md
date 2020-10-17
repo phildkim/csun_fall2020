@@ -9,7 +9,7 @@
 
 ## COMP 256
 
-- [ ] **Midterm October 12th**
+- [X] ~~**Midterm October 12th**~~
 
 ## COMP 333
 
@@ -21,4 +21,4 @@
 
 - [X] ~~Project 1~~
 - [X] ~~Project 2 (Group)~~
-- [ ] Create New Resume
+- [X] ~~Create New Resume~~
