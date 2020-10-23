@@ -92,7 +92,7 @@ function immList(obj) {
     return l.object(v);
   };
   const ol = o(obj);
-  return ol;
+  return join(ol, ", ");
 };
 function Nil() { };
 Nil.prototype = new List();
@@ -123,7 +123,6 @@ Cons.prototype.isEmpty = function () {
   return immList(new Cons(this, new Nil())).hasOwnProperty('head');
 };
 Cons.prototype.length = function () {
-  // return immList(new Cons(this.head, new Cons(this.tail, new Nil()))).match(/\w/g).length;
   return immList(new Cons(this, new Nil())).match(/\w/g).length;
 };
 Cons.prototype.append = function (cons) {
@@ -133,17 +132,15 @@ Cons.prototype.contains = function (cons) {
   return (parseInt(immList(new Cons(this, new Nil())).search(cons)) == -1) ? false : true;
 };
 Cons.prototype.filter = function (cons) {
-  const lst = immList(new Cons(this, new Nil()));
   const arr = [];
-  for (let i in lst) {
-    cons(parseInt(lst[i])) == true ? arr.push(lst[i]) : i;
+  for (let i in immList(new Cons(this, new Nil()))) {
+    cons(parseInt(immList(new Cons(this, new Nil()))[i])) == true ? arr.push(immList(new Cons(this, new Nil()))[i]) : i;
   }
   return immList(new Cons(arr.join(", "), new Nil()));
 };
 Cons.prototype.map = function (cons) {
-  const lst = immList(new Cons(this, new Nil()));
   const arr = [];
-  arr.push(cons(lst.toString().split(',')));
+  arr.push(cons(this));
   return arr;
 };
 
@@ -217,7 +214,7 @@ function runTest(test) {
   process.stdout.write(test.name + ": ");
   try {
     test();
-    process.stdout.write("pass\n");
+    process.stdout.write("PASS\n");
   } catch (error) {
     process.stdout.write("FAIL\n");
     console.log(error);
