@@ -1,0 +1,27 @@
+  public static void powerList(List<Integer> n) {
+    powerList(n, 0, new ArrayList<Integer>());
+  }
+  private static void powerList(List<Integer> n, int i, ArrayList<Integer> items) {
+    if (i >= n.size()) { // Base case: No more items
+      for (Integer item : items)
+        System.out.println(item);
+      if (items.isEmpty())
+        System.out.println("HELLO");
+      System.out.println();
+      return;
+    }
+    ArrayList<Integer> tmp = new ArrayList<Integer>(items);
+    tmp.add(n.get(i));
+    powerList(n, i + 1, tmp); // Pick curr
+    powerList(n, i + 1, items); // Ignore curr
+  }
+
+
+  public static void main(String[] args) {
+    List<Integer> selectedCopy = new ArrayList<Integer>();
+    selectedCopy.add(1);
+    selectedCopy.add(2);
+    selectedCopy.add(3);
+    powerList(selectedCopy);
+    
+  }
