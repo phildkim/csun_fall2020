@@ -1,0 +1,116 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{salary}{online}{}
+      \field{labelalpha}{20}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{extraalpha}{1}
+      \field{labeltitlesource}{title}
+      \field{title}{7 charts that show the glaring gap between men's and women's salaries in the US}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.businessinsider.com/gender-wage-pay-gap-charts-2017-3
+      \endverb
+      \verb{url}
+      \verb https://www.businessinsider.com/gender-wage-pay-gap-charts-2017-3
+      \endverb
+      \keyw{salary wonmen}
+    \endentry
+    \entry{congress}{online}{}
+      \field{labelalpha}{20}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{extraalpha}{2}
+      \field{labeltitlesource}{title}
+      \field{title}{Women in the U.S. Congress 2020}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://cawp.rutgers.edu/women-us-congress-2020
+      \endverb
+      \verb{url}
+      \verb https://cawp.rutgers.edu/women-us-congress-2020
+      \endverb
+      \keyw{congress wonmen}
+    \endentry
+    \entry{fortune}{online}{}
+      \name{author}{1}{}{%
+        {{hash=947f5fd100de4348cee3ed94b644cfe9}{%
+           family={HINCHLIFFE},
+           familyi={H\bibinitperiod},
+           given={EMMA},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{947f5fd100de4348cee3ed94b644cfe9}
+      \strng{fullhash}{947f5fd100de4348cee3ed94b644cfe9}
+      \strng{bibnamehash}{947f5fd100de4348cee3ed94b644cfe9}
+      \strng{authorbibnamehash}{947f5fd100de4348cee3ed94b644cfe9}
+      \strng{authornamehash}{947f5fd100de4348cee3ed94b644cfe9}
+      \strng{authorfullhash}{947f5fd100de4348cee3ed94b644cfe9}
+      \field{labelalpha}{HIN20}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The number of female CEOs in the Fortune 500 hits an all-time record}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://fortune.com/2020/05/18/women-ceos-fortune-500-2020/
+      \endverb
+      \verb{url}
+      \verb https://fortune.com/2020/05/18/women-ceos-fortune-500-2020/
+      \endverb
+      \keyw{fortune 500}
+    \endentry
+    \entry{nobelprize}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6ef5cbb3dfaf492be1a0991c68b630ca}{%
+           family={McGrayne},
+           familyi={M\bibinitperiod},
+           given={Sharon\bibnamedelima Bertsch},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{6ef5cbb3dfaf492be1a0991c68b630ca}
+      \strng{fullhash}{6ef5cbb3dfaf492be1a0991c68b630ca}
+      \strng{bibnamehash}{6ef5cbb3dfaf492be1a0991c68b630ca}
+      \strng{authorbibnamehash}{6ef5cbb3dfaf492be1a0991c68b630ca}
+      \strng{authornamehash}{6ef5cbb3dfaf492be1a0991c68b630ca}
+      \strng{authorfullhash}{6ef5cbb3dfaf492be1a0991c68b630ca}
+      \field{labelalpha}{McG98}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-309-07270-0}
+      \field{journaltitle}{Their Lives, Struggles, and Moentours Discoveries}
+      \field{title}{Nobel Prize Women in Science}
+      \field{year}{1998}
+      \field{pages}{472}
+      \range{pages}{1}
+      \verb{doi}
+      \verb doi: https://doi.org/10.17226/10016
+      \endverb
+      \keyw{nobel prize women in science}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

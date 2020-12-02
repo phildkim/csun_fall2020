@@ -112,7 +112,6 @@ Cons.prototype.map = function (cons) {
 }
 
 function Nil() {}
-
 Nil.prototype = new List();
 Nil.prototype.isEmpty = function () {
   return !join(new Nil()).hasOwnProperty('tail');

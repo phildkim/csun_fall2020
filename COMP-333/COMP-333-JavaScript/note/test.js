@@ -55,3 +55,49 @@ console.log(withOne.add(2));//3
 console.log(subOne.sub(1));//2
 console.log(mulOne.mul(withFive.add(1)));//12
 
+
+
+function output() {
+  console.log("foo");
+}
+let f1 = mystery(output); 
+f1();
+console.log();
+
+let f2 = mystery(f1); 
+f2();
+console.log();
+
+let f3 = mystery(f2); 
+f3();
+console.log();
+// first define a function mystery since let f1 = mystery(output)
+function mystery(f) {
+  // you know its going to return a function since output is a function itself
+  return function() {
+    // now here it can get a little tricky, but let's make it simple but observing the output he provided.
+    // first call f1, displays foo, foo. Since out return "foo", called the f parameter twice should do the trick.
+    f();
+    f();
+  }
+}
+
+/**
+Output:
+foo 
+foo
+
+foo
+foo
+foo
+foo
+
+foo
+foo
+foo
+foo
+foo
+foo
+foo
+foo
+ */

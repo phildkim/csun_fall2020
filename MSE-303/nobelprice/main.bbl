@@ -1,0 +1,170 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{jardins}{online}{}
+      \name{author}{1}{}{%
+        {{hash=4fad2d37f24413fc05532566ae14e753}{%
+           family={{D}es},
+           familyi={D\bibinitperiod},
+           given={{J}ulie},
+           giveni={J\bibinitperiod},
+           suffix={{J}ardins},
+           suffixi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4fad2d37f24413fc05532566ae14e753}
+      \strng{fullhash}{4fad2d37f24413fc05532566ae14e753}
+      \strng{bibnamehash}{4fad2d37f24413fc05532566ae14e753}
+      \strng{authorbibnamehash}{4fad2d37f24413fc05532566ae14e753}
+      \strng{authornamehash}{4fad2d37f24413fc05532566ae14e753}
+      \strng{authorfullhash}{4fad2d37f24413fc05532566ae14e753}
+      \field{labelalpha}{Des10}
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Madame Curie Complex: The Hidden History of Women in Science}
+      \field{year}{2010}
+      \verb{urlraw}
+      \verb https://ebookcentral.proquest.com/lib/csun/reader.action?docID=530393
+      \endverb
+      \verb{url}
+      \verb https://ebookcentral.proquest.com/lib/csun/reader.action?docID=530393
+      \endverb
+      \keyw{madame complex}
+    \endentry
+    \entry{drjemison}{online}{}
+      \name{author}{1}{}{%
+        {{hash=08bf90e19820f46f1988f7760f5a4cf5}{%
+           family={HuffPostLive},
+           familyi={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{08bf90e19820f46f1988f7760f5a4cf5}
+      \strng{fullhash}{08bf90e19820f46f1988f7760f5a4cf5}
+      \strng{bibnamehash}{08bf90e19820f46f1988f7760f5a4cf5}
+      \strng{authorbibnamehash}{08bf90e19820f46f1988f7760f5a4cf5}
+      \strng{authornamehash}{08bf90e19820f46f1988f7760f5a4cf5}
+      \strng{authorfullhash}{08bf90e19820f46f1988f7760f5a4cf5}
+      \field{labelalpha}{Huf14}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Mae Jemison On Minorities Entering STEM}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=rWLn79cS-cw
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=rWLn79cS-cw
+      \endverb
+      \keyw{jemison}
+    \endentry
+    \entry{kopievanpbs}{online}{}
+      \name{author}{1}{}{%
+        {{hash=4e7c7d63016bb765125ac746d656a7ec}{%
+           family={Kopie\bibnamedelimb van\bibnamedelima PBS},
+           familyi={K\bibinitperiod\bibinitdelim v\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={The\bibnamedelimb Path\bibnamedelimb to\bibnamedelimb Nuclear\bibnamedelima Fission},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim t\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e7c7d63016bb765125ac746d656a7ec}
+      \strng{fullhash}{4e7c7d63016bb765125ac746d656a7ec}
+      \strng{bibnamehash}{4e7c7d63016bb765125ac746d656a7ec}
+      \strng{authorbibnamehash}{4e7c7d63016bb765125ac746d656a7ec}
+      \strng{authornamehash}{4e7c7d63016bb765125ac746d656a7ec}
+      \strng{authorfullhash}{4e7c7d63016bb765125ac746d656a7ec}
+      \field{labelalpha}{Kop06}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Story of Lise Meitner and Otto Hahn}
+      \field{year}{2006}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=OVT0suIlzXQ&feature=youtu.be
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=OVT0suIlzXQ&feature=youtu.be
+      \endverb
+      \keyw{lise meitner}
+    \endentry
+    \entry{dorothy1}{online}{}
+      \name{author}{1}{}{%
+        {{hash=f580a703bbf0b90e2a0d09e093b277bd}{%
+           family={Oxford},
+           familyi={O\bibinitperiod},
+           given={Somerville\bibnamedelima College},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{f580a703bbf0b90e2a0d09e093b277bd}
+      \strng{fullhash}{f580a703bbf0b90e2a0d09e093b277bd}
+      \strng{bibnamehash}{f580a703bbf0b90e2a0d09e093b277bd}
+      \strng{authorbibnamehash}{f580a703bbf0b90e2a0d09e093b277bd}
+      \strng{authornamehash}{f580a703bbf0b90e2a0d09e093b277bd}
+      \strng{authorfullhash}{f580a703bbf0b90e2a0d09e093b277bd}
+      \field{labelalpha}{Oxf17}
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Why was Dorothy Hodgkin's research revolutionary?}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=zrryPaMnGVs&feature=youtu.be
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=zrryPaMnGVs&feature=youtu.be
+      \endverb
+      \keyw{dorothy hodgkin1}
+    \endentry
+    \entry{dorothy2}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b258154090c82c3c93b53acae7f1e512}{%
+           family={Weekly},
+           familyi={W\bibinitperiod},
+           given={Studies},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{b258154090c82c3c93b53acae7f1e512}
+      \strng{fullhash}{b258154090c82c3c93b53acae7f1e512}
+      \strng{bibnamehash}{b258154090c82c3c93b53acae7f1e512}
+      \strng{authorbibnamehash}{b258154090c82c3c93b53acae7f1e512}
+      \strng{authornamehash}{b258154090c82c3c93b53acae7f1e512}
+      \strng{authorfullhash}{b258154090c82c3c93b53acae7f1e512}
+      \field{labelalpha}{Wee15}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Dorothy Hodgkin}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=JoXdBwO-pMc&feature=youtu.be
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=JoXdBwO-pMc&feature=youtu.be
+      \endverb
+      \keyw{dorothy hodgkin2}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
