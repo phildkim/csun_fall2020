@@ -3,6 +3,7 @@
 \RequirePackage[left=0.8in,top=1.0in,right=1.0in,bottom=1.0in]{geometry}
 \RequirePackage{amssymb,amsmath,amsthm,latexsym}
 \RequirePackage{graphicx,import,color,listings}
+\graphicspath{ {./images/} }
 % defined colors
 \definecolor{codebg}{rgb}{0.94,0.97,1.0}
 \definecolor{codereg}{rgb}{0.1,0.14,0.13}
@@ -33,4 +34,7 @@
   keywordstyle=[2]\color{codeerr}\bfseries\small,
   prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}}),
 }
-\def\imp#1{\textcolor{blue}{\sl\textbf{#1}}}
+\def\imp#1{\textcolor{red}{\sl\textbf{#1}}}
+
+\def\blu#1{\textcolor{blue}{#1}}
+\def\red#1{\textcolor{red}{#1}}
