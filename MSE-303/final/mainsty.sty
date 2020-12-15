@@ -2,7 +2,7 @@
 \ProvidesPackage{mainsty}[2020/09/25]
 \RequirePackage[left=0.8in,top=1.0in,right=1.0in,bottom=1.0in]{geometry}
 \RequirePackage{amssymb,amsmath,amsthm,latexsym}
-\RequirePackage{graphicx,import,color,listings}
+\RequirePackage{graphicx,import,color,listings,hyperref}
 % defined colors
 \definecolor{codebg}{rgb}{0.94,0.97,1.0}
 \definecolor{codereg}{rgb}{0.1,0.14,0.13}
@@ -33,5 +33,17 @@
   keywordstyle=[2]\color{codeerr}\bfseries\small,
   prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}}),
 }
+\def\dne#1{\textcolor{green}{\sl\textbf{\underline{#1}}}}
 \def\imp#1{\textcolor{blue}{\sl\textbf{#1}}}
+\def\red#1{\textcolor{red}{\sl\textbf{#1}}}
+\def\warn#1{\textcolor{cyan}{\sl\textbf{\underline{#1}}}}
 \def\link#1{\textcolor{red}{\sl\textbf{#1}}}
+\def\sub#1{\textcolor{codecmt}{\sl\textbf{\underline{#1}}}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\urlstyle{same}
